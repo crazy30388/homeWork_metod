@@ -2,13 +2,13 @@
 public class Main {
     public static void main(String[] args) {
        int year = 2019;
-        System.out.println(LeapYear(year));
+        LeapYear(year);
         int clientOS = 1;
         int clientDeviceYear = 2014;
-        System.out.println(client(clientOS, clientDeviceYear));
+        client(clientOS, clientDeviceYear);
         int deliveryDay = 1;
         int deliveryDistance = 95;
-        System.out.println(delivery(deliveryDay, deliveryDistance));
+        delivery(deliveryDay, deliveryDistance);
     }
 
     public static int LeapYear(int y)
