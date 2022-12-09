@@ -1,50 +1,43 @@
 
 public class Main {
     public static void main(String[] args) {
-       int year = 2019;
-        LeapYear(year);
+        int year = 2019;
+        System.out.println(leapYear(2019));
         int clientOS = 1;
         int clientDeviceYear = 2014;
         client(clientOS, clientDeviceYear);
         int deliveryDay = 1;
-        int deliveryDistance = 95;
-        delivery(deliveryDay, deliveryDistance);
+        System.out.println("Доставка дней: " + DaysForDelivery(95));
     }
 
-    public static int LeapYear(int y)
-    {
-        if (y % 4 <= 0 && y % 100 != 0 || y % 400 <= 0)
-        {System.out.println(y + " год является високосным");}
-        else {System.out.println(y + " год не является високосным");}
-
-        return y;
-    }
-    public static int client(int x, int z){
-
-    if (x == 0) {
-        if (z < 2015) {
-            System.out.println("Установитe облегченную версию приложения для iOS по ссылке");
-        } else {
-            System.out.println("Установите версию приложения для iOS по ссылке");
+    public static String leapYear(int year) {
+        String result = year + " не вискосный год";
+        if (year % 100 == 0 ^ year % 4 == 0) {
+        result = year + "  вискосный год";
         }
-    } else {
-        if (z < 2015) {
-            System.out.println("Установитe облегченную версию приложения для Android по ссылке");
-        } else {
-            System.out.println("Установите версию приложения для Android по ссылке");
+        return result;
+    }
+    public static int client(int iOS, int android){
+    if (iOS == 0) {
+        if (android < 2015) {
+        System.out.println("Установитe облегченную версию приложения для iOS по ссылке");
+        }
+        else {
+        System.out.println("Установите версию приложения для iOS по ссылке");
+        }
+        }
+        else {
+        if (android < 2015) {
+        System.out.println("Установитe облегченную версию приложения для Android по ссылке");
+        }
+        else {
+        System.out.println("Установите версию приложения для Android по ссылке");
         }
     }
-        return x;
+        return iOS;
     }
-    public static int delivery(int x, int y){
-    if (y > 20) {
-        x++;
-    }
-    if (y > 60) {
-        x++;
-    }
-    System.out.println("потребуется дней: " + x);
-        return x;
+    public static int DaysForDelivery(int deliveryDistance){
+        return 1 + (deliveryDistance + 20) / 40;
     }}
 
 
